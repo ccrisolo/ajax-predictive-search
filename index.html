@@ -18,7 +18,12 @@
                 <li>or a state</li>
             </ul>
         </form>
+
+        <div class="caption">
+            <h3>Built with HTML, CSS, JS and RegEx</h3>
+        </div>
         <script>
+            //api endpoint
             const endpoint =
                 "https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json";
 
@@ -28,6 +33,7 @@
                 .then(data => cities.push(...data));
             console.log("cities", cities);
 
+            //finds  matches on characters input
             function findMatches(wordToMatch, cities) {
                 return cities.filter(place => {
                     const regex = new RegExp(wordToMatch, "gi");
@@ -35,6 +41,7 @@
                 });
             }
 
+            //displays matches using findmatches for data  values
             function displayMatches() {
                 const matchArray = findMatches(this.value, cities);
                 console.log(matchArray);
@@ -60,9 +67,11 @@
                 suggestions.innerHTML = results;
             }
 
+            //variables for input and list items
             const searchInput = document.querySelector(".search");
             const suggestions = document.querySelector(".suggestions");
 
+            //event listeners for inputs above
             searchInput.addEventListener("change", displayMatches);
             searchInput.addEventListener("keyup", displayMatches);
         </script>
