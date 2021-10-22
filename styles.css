@@ -24,7 +24,7 @@ input {
 
 .search-form {
     max-width: 400px;
-    margin: 50px auto;
+    margin: 0px auto 480px ;
     grid-column: 2/3;
 }
 
@@ -103,4 +103,13 @@ h3{
     justify-content: flex-end;
     margin-left: 10%;
  
+}
+
+@media (max-width: 500px) {
+    .search-form {
+        max-width: 400px;
+        margin: 0px auto 480px 20px;
+        grid-column: 2/3;
+    }
+    
 }
